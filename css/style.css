@@ -1,0 +1,225 @@
+/* Configurações Gerais / Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fcf9f5; /* Off-white aconchegante */
+    color: #333;
+}
+
+/* Cabeçalho Fixado */
+header {
+    background-color: #800000; /* Vermelho Pizzaria Nobre (Bordô) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffcc00; /* Destaque em ouro */
+}
+
+.logo-area h1 {
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Navegação */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+nav ul li a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    background-color: #ffcc00;
+    color: #800000;
+}
+
+/* Container do Cardápio */
+.menu-container {
+    max-width: 1200px;
+    margin: 140px auto 60px auto; /* Afastamento por conta do header fixo */
+    padding: 0 20px;
+}
+
+.menu-section {
+    margin-bottom: 60px;
+    scroll-margin-top: 140px; /* Evita que o header cubra o título ao clicar no menu */
+}
+
+.section-title {
+    font-size: 1.8rem;
+    color: #800000;
+    margin-bottom: 25px;
+    border-left: 5px solid #ffcc00;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+/* Grid de Produtos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.product-info p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+    height: 60px; /* Mantém o alinhamento dos cards */
+    overflow: hidden;
+}
+
+.product-info .price {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #e67e22; /* Laranja/Dourado quente para preço */
+}
+
+/* Rodapé */
+footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 40px 20px 20px 20px;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-block h4 {
+    color: #fff;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.footer-block p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.footer-divider {
+    width: 1px;
+    height: 60px;
+    background-color: #444;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Responsividade Básica (Mobile) */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    nav ul li a {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .menu-container {
+        margin-top: 190px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-divider {
+        display: none;
+    }
+}
